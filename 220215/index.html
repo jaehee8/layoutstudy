@@ -27,7 +27,7 @@
 
   <script>
     //item 3개 div의 부모태그 itemWrapper
-    const itemWrapper = document.querySelector('#item-wrapper');
+    // const itemWrapper = document.querySelector('#item-wrapper');
     // console.log(itemWrapper);
     // console.dir(itemWrapper);
     // //itemWrapper
@@ -38,23 +38,81 @@
     //     itemWrapper.children[i].style.left = "-100px";
     //   }
     //});
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
+    // const prev = document.querySelector('.prev');
+    // const next = document.querySelector('.next');
     //풀어서 동작하는지 확인
 
-    prev.addEventListener('click', function() {
-      for(let i=0; i<itemWrapper.children.length; i++) {
-        itemWrapper.children[i].style.left = "-100px";
-      }
-    });
+    // prev.addEventListener('click', function() {
+    //   for(let i=0; i<itemWrapper.children.length; i++) {
+    //     itemWrapper.children[i].style.left = "-100px";
+    //   }
+    // });
+    // next.addEventListener('click', function() {
+    //   for(let i=0; i<itemWrapper.children.length; i++) {
+    //     itemWrapper.children[i].style.left = "100px";
+    //   }
+    // });
 
-    next.addEventListener('click', function() {
-      for(let i=0; i<itemWrapper.children.length; i++) {
-        itemWrapper.children[i].style.left = "100px";
+//?value값을 itemwrapper의 자식의 위드값만큼 움직이고싶을때
+    //함수 선언
+    
+    const itemWrapper = document.querySelector('#item-wrapper');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let curPos = 0;
+    let value = 0;
+    let itemsWidth = itemWrapper.children[0].offsetWidth;
+    console.log(itemsWidth);
+
+    function forLoop(target) {
+      for(let i=0; i < target.children.length; i++) {
+        target.children[i].style.left = value +'px';
+      }
+    }
+    
+    prev.addEventListener('click',function(){
+      if(curPos > 0){
+        value += itemsWidth;
+        forLoop(itemWrapper);
+        curPos = curPos - 1;
+        console.log(curPos);
       }
     });
     
+    next.addEventListener('click',function(){
+      if(curPos < 2) {
+        value -= itemsWidth;
+        forLoop(itemWrapper);
+        curPos = curPos + 1;
+        console.log(curPos);
+      }
+    });
 
+
+
+
+
+    // function btnEvent($btn) {
+    //   setValue = value;
+    //   $btn.addEventListener('click', function() {
+    //     if($btn === prev) {
+    //       setValue = value;
+    //       console.log("true" + setValue);
+    //       forLoop(itemWrapper, setValue);
+    //     } else {
+    //       setValue = value;
+          
+    //       console.log("false" + setValue);
+    //       forLoop(itemWrapper, setValue);
+    //       // for(let i=0; i<itemWrapper.children.length; i++) {
+    //       // itemWrapper.children[i].style.left = setValue + 'px';
+    //       // }
+    //     }
+        
+    //   });
+    // }
+    // btnEvent(prev);
+    // btnEvent(next);
 
   </script>
 </body>

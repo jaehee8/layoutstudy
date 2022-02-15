@@ -34,16 +34,18 @@
 
       &> div { //item-wrapper
         @include size-set(50%, 100%, #ccc);
-        @include flex-set(center, center, row);
+        @include flex-set(left, center, row);
         position: relative;
         border: 1px solid yellow;
 
         & > div {
-          min-width: 90%;
-          @include size-set(90%, 90%, #fcc);
+          min-width: 100%;
+          @include size-set(100%, 100%, #fcc);
           @extend %test-border;
           position: relative;
-        
+        }
+        & > div:nth-child(2) {
+          background-color: #ccf;
         }
       }
     }
