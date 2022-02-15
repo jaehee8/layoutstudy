@@ -37,6 +37,7 @@
         @include flex-set(left, center, row);
         position: relative;
         border: 1px solid yellow;
+        overflow: hidden;
 
         & > div {
           min-width: 100%;
@@ -46,6 +47,9 @@
         }
         & > div:nth-child(2) {
           background-color: #ccf;
+        }
+        & > div:nth-child(3) {
+          background-color: #cff;
         }
       }
     }
