@@ -18,21 +18,42 @@
         </div>
       </section>
       <section>
-        <div class="prev"></div>
-        <div class="next"></div>
+        <div class="prev">prev</div>
+        <div class="next">next</div>
       </section>
 
     </div>
   </div>
 
   <script>
+    //item 3개 div의 부모태그 itemWrapper
     const itemWrapper = document.querySelector('#item-wrapper');
-    console.log(itemWrapper);
-    console.dir(itemWrapper);
+    // console.log(itemWrapper);
+    // console.dir(itemWrapper);
+    // //itemWrapper
+    // itemWrapper.addEventListener('click', function() {
+    //   console.log('click event good!');
+    //   console.dir(itemWrapper);  //children 객체
+    //   for(let i=0; i<itemWrapper.children.length; i++) {
+    //     itemWrapper.children[i].style.left = "-100px";
+    //   }
+    //});
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    //풀어서 동작하는지 확인
 
-    itemWrapper.addEventListener('click', function() {
-      console.log('click event good!');
+    prev.addEventListener('click', function() {
+      for(let i=0; i<itemWrapper.children.length; i++) {
+        itemWrapper.children[i].style.left = "-100px";
+      }
     });
+
+    next.addEventListener('click', function() {
+      for(let i=0; i<itemWrapper.children.length; i++) {
+        itemWrapper.children[i].style.left = "100px";
+      }
+    });
+    
 
 
   </script>
