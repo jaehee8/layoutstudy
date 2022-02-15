@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>hello</h1>
+  </main>
+  <script>
+    const main = document.querySelector('main');
+    const h1 = document.querySelector('h1');
+    main.addEventListener('click', function(event){
+      console.dir(event.pageX);
+      h1.textContent = `마우스 가로 좌표값은 : ${event.pageX}`;
+    });
+
+    const jaehee = {
+      name : "박재희",
+      hp : "042",
+      number : "2455"
+    }
+    console.log(jaehee);
+  </script>
+</body>
+</html>
