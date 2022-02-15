@@ -80,7 +80,9 @@
     });
     
     next.addEventListener('click',function(){
-      if(curPos < 2) {
+      if(curPos < itemWrapper.children.length-1) {
+        //length : 3;
+        //index 0,1,2
         value -= itemsWidth;
         forLoop(itemWrapper);
         curPos = curPos + 1;
