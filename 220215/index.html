@@ -4,15 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>slide</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div id="view">
-    <div id="items-wrapper">
-      <div class="items"></div>
-      <div class="items"></div>
-      <div class="items"></div>
+  <div id="doc-sizing">
+    <div id="container">
+      <section>
+        <div id="item-wrapper">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+      <section>
+        <div class="prev"></div>
+        <div class="next"></div>
+      </section>
+
     </div>
   </div>
+
+  <script>
+    const itemWrapper = document.querySelector('#item-wrapper');
+    console.log(itemWrapper);
+    console.dir(itemWrapper);
+
+    itemWrapper.addEventListener('click', function() {
+      console.log('click event good!');
+    });
+
+
+  </script>
 </body>
 </html>
