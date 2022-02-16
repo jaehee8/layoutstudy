@@ -1,0 +1,60 @@
+* { 
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin size($width, $height, $backgroundColor) {
+  width: $width;
+  height: $height;
+  background-color: $backgroundColor;
+}
+@mixin flex-set($justify, $align, $flexDirect) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $flexDirect;
+  
+}
+#container {
+  @include size(100vw, 100vh, #eee);
+  @include flex-set(center, center, row);
+  
+  & > div { //wrap
+    @include size(50vw, 100vh, #fff);
+    @include flex-set(center, center, row);
+    position: relative;
+
+    & > div:nth-child(1) { //background
+      @include size(100%, 100%, rgba($color: #000000, $alpha: 0));
+      position: absolute;
+    }
+    & > div:nth-child(2) { //image
+      @include size(100%, 100%, #fff);
+      background-image: url(../images/she.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: 50% 50%;
+    }
+    & >div:nth-child(3) { //text
+      @include size(30%, 30%, rgba($color: #000000, $alpha: 0));
+      position: absolute;
+      bottom: 0;
+      right: -30%;
+      padding: 1rem;
+      & > * {
+        color: #333;
+        font-size: 1rem;
+      }
+      & > h1 {
+        margin: 1rem 0;
+        line-height: 1;
+      }
+      & > p {
+        font-size: .8rem;
+        margin-top: 1rem;
+        text-align: justify;
+      }
+    }
+  }
+}

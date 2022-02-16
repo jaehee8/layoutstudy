@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div></div>
+      <div></div>
+      <div id="text-box">
+        <h1>portrait in memory</h1>
+        <span>Gong Wook-jae</span>
+        <p>
+          I try to remember. It comes and fades away. I drew it before I forgot. <br>
+          <br>
+          digital drawing <br>
+          2022.02.16
+        </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const imgBox = document.querySelector('#wrap');
+    let value = 0
+    function color(target) {
+      // target.parentElement.style.backgroundColor = `rgba(0,0,0,${value})`;
+      target.children[0].style.backgroundColor = `rgba(0,0,0,${value})`;
+      target.children[1].style.backgroundColor = `rgba(0,0,0,${value})`;
+      target.children[2].style.backgroundColor = `rgba(255,255,255,${value})`;
+    }
+    // imgBox.parentElement.style.backgroundColor = 'rgba(0,0,0,.2)';
+    // imgBox.children[2].style.backgroundColor = 'rgba(255,255,255,.2)';
+
+    imgBox.addEventListener('click', function(){
+      if( value < .8) {
+        value += .8
+        color(imgBox);
+        console.log(value);
+      } else {
+        value -= .8
+        color(imgBox);
+      }
+      
+    });
+    
+    console.dir(imgBox.children[2].style.backgroundColor);
+    
+
+  </script>
+</body>
+</html>
