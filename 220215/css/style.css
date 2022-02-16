@@ -53,6 +53,7 @@
   height: 100%;
   background-color: #fcc;
   position: relative;
+  transition: 0.5s;
 }
 #doc-sizing > div > section:nth-child(1) > div > div:nth-child(2) {
   background-color: #ccf;

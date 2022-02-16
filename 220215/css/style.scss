@@ -44,6 +44,7 @@
           @include size-set(100%, 100%, #fcc);
           @extend %test-border;
           position: relative;
+          transition: .5s;
         }
         & > div:nth-child(2) {
           background-color: #ccf;
