@@ -28,6 +28,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
+  transition: 0.3s;
 }
 #container > div > div:nth-child(2) {
   width: 100%;
@@ -37,6 +38,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;
+  transition: 0.3s;
 }
 #container > div > div:nth-child(3) {
   width: 30%;
@@ -46,6 +48,7 @@
   bottom: 0;
   right: -30%;
   padding: 1rem;
+  transition: 0.3s;
 }
 #container > div > div:nth-child(3) > * {
   color: #333;

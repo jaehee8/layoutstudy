@@ -28,6 +28,7 @@
     & > div:nth-child(1) { //background
       @include size(100%, 100%, rgba($color: #000000, $alpha: 0));
       position: absolute;
+      transition: .3s;
     }
     & > div:nth-child(2) { //image
       @include size(100%, 100%, #fff);
@@ -35,6 +36,7 @@
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: 50% 50%;
+      transition: .3s;
     }
     & >div:nth-child(3) { //text
       @include size(30%, 30%, rgba($color: #000000, $alpha: 0));
@@ -42,6 +44,7 @@
       bottom: 0;
       right: -30%;
       padding: 1rem;
+      transition: .3s;
       & > * {
         color: #333;
         font-size: 1rem;
