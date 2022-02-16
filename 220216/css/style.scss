@@ -17,7 +17,7 @@
   
 }
 #container {
-  @include size(100vw, 100vh, #eee);
+  @include size(100vw, 100vh, #ccc);
   @include flex-set(center, center, row);
   
   & > div { //wrap

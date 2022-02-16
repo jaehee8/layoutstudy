@@ -7,7 +7,7 @@
 #container {
   width: 100vw;
   height: 100vh;
-  background-color: #eee;
+  background-color: rgba(0, 0, 0, .7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 #container > div > div:nth-child(2) {
   width: 100%;
@@ -36,7 +36,7 @@
   background-color: #fff;
   background-image: url(../images/she.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: auto 130%;
   background-position: 50% 50%;
   transition: 0.3s;
 }
@@ -48,7 +48,7 @@
   bottom: 0;
   right: -30%;
   padding: 1rem;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 #container > div > div:nth-child(3) > * {
   color: #333;
