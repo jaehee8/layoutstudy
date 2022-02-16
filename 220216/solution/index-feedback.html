@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div></div>
+      <div></div>
+      <div id="text-box">
+        <h1>portrait in memory</h1>
+        <span>Gong Wook-jae</span>
+        <p>
+          I try to remember. It comes and fades away. I drew it before I forgot. <br>
+          <br>
+          digital drawing <br>
+          2022.02.16
+        </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const imgBox = document.querySelector('#wrap');
+
+    function colorSolution(target) {
+      for (let i = 0; i < target.children.length; i++) {
+        target.children[i].style.backgroundColor =
+          `rgba(${colorValueBlack},${colorValueBlack},${colorValueBlack},${alphaValue})`;
+        if (i === target.children.length - 1) {
+          target.children[i].style.backgroundColor =
+            `rgba(${colorValueWhite},${colorValueWhite},${colorValueWhite},${alphaValue})`;
+        }
+      }
+    }
+
+
+    let colorValueBlack = 0;
+    let colorValueWhite = 255;
+    let alphaValue = 1;
+
+    // 함수 호출 방식으로 imgbox의 backgroundColor 값 스타일링 
+    colorSolution(imgBox);
+
+
+    let isStatus = true;
+    imgBox.addEventListener('click', function () {
+      if (isStatus === true) { // 변수 isStatus가 참이면
+        if (colorValueBlack < colorValueWhite) {
+          colorValueBlack = colorValueBlack + 30;
+          alphaValue -= 0.1;
+          // 위의 전역변수를 변화시키는 방식으로 로직 설정
+          colorSolution(imgBox);
+          // 변수를 변화시키고 -> 변화된 값이 적용되는 함수를 다시 호출하는 방식
+          // 고차함수 or 모듈 or 캡슐 
+          // 복잡한 알고리즘을 구현해야할때 이러한 방식으로 함수로 나누어 호출하는 방식을 많이 사용한다.
+          // 함수형 프로그래밍 functional programming <--의 기본 개념
+
+          console.log(colorValueBlack);
+        } else {
+          isStatus = false;
+          console.log(isStatus);
+        }
+      } else { // 변수 isStatus가 거짓 이면
+        if (colorValueBlack > 0) {
+          colorValueBlack = colorValueBlack - 30;
+          alphaValue += 0.1;
+          colorSolution(imgBox);
+          console.log(colorValueBlack);
+        } else {
+          isStatus = true;
+        }
+      } 
+    });
+
+
+
+
+    // let value = 0;
+    // // 감동 ★
+    // function color(target) {
+    //   // target.parentElement.style.backgroundColor = `rgba(0,0,0,${value})`;
+    //   target.children[0].style.backgroundColor = `rgba(0,0,0,${value})`;
+    //   target.children[1].style.backgroundColor = `rgba(0,0,0,${value})`;
+    //   target.children[2].style.backgroundColor = `rgba(255,255,255,${value})`;
+    // }
+    // imgBox.parentElement.style.backgroundColor = 'rgba(0,0,0,.2)';
+    // imgBox.children[2].style.backgroundColor = 'rgba(255,255,255,.2)';
+
+    // imgBox.addEventListener('click', function(){
+    //   if( value < .8) {
+    //     value += .8
+    //     color(imgBox);
+    //     // console.log(value);
+    //   } else {
+    //     value -= .8
+    //     color(imgBox);
+    //   }
+
+    // });
+
+    // console.dir(imgBox.children[2].style.backgroundColor);
+  </script>
+</body>
+
+</html>
