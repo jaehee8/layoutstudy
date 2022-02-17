@@ -75,6 +75,7 @@ $height-nav : 8vh;
     }
   }
   & > #wrap {
+    // 상대값으로 size mixin을 고려해보세요.
     @include size(3240px, 2440px);
     display: flex;
     @extend %relactive;
