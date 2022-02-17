@@ -42,30 +42,35 @@
     const section = document.querySelectorAll('#wrap > section');
 
     for(let i=0; i<section.length; i++) {
-      section[i].style.width = 1080 + "px";
-      section[i].style.height = 2440 + "px";
-    }
-    console.log(section[1].style.width);
+      section[i].style.width = 100 + "vw";
+      section[i].style.height = 100 + "vh";
 
-    section.addEventListener('touchstart', touchStart);
-    section.addEventListener('touchend', touchEnd);
+      section[i].addEventListener('touchstart', touchStart);
+      console.log(touchStart);
+      section[i].addEventListener('touchend', touchEnd);
 
-    function prev(){
-      if(curPos > 0){
-        position += sectionWidth;
-        section.style.transform = `translateX(${position}vw)`;
-        curPos = curPos - 1;
-        console.log(sectionWidth);
+      function prev(){
+        if(curPos > 0){
+          position += sectionWidth;
+          section[i].style.transform = `translateX(${position}vw)`;
+          curPos = curPos - 1;
+          console.log(sectionWidth);
+        }
+      }
+      function next(){
+        if(curPos < 2) {
+          position -= sectionWidth;
+          section[i].style.transform = `translateX(${position}vw)`;
+          curPos = curPos + 1;
+          console.log(sectionWidth);
+        }
       }
     }
-    function next(){
-      if(curPos < 2) {
-        position -= sectionWidth;
-        section.style.transform = `translateX(${position}vw)`;
-        curPos = curPos + 1;
-        console.log(sectionWidth);
-      }
-    }
+    
+
+    
+
+    
 
     function touchStart(event) {
       startX = event.touches[0].pageX;
